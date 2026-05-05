@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+from datetime import date
 
 INDICATORS = {
     "CPI"      : "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
@@ -17,7 +18,7 @@ def fetch_macro_indicators():
         df["date"] = pd.to_datetime(df["date"])      # convertir ensuite
 
         df = df[df["date"] >= "2020-01-01"]
-        df = df[df["date"] <= "2024-12-31"]
+        df = df[df["date"] <= pd.Timestamp.today()]
         df["date"] = df["date"].dt.date
         df["indicator"] = indicator
 

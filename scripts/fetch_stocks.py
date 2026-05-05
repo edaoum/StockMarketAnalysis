@@ -1,10 +1,11 @@
 import yfinance as yf
 import pandas as pd
 from pathlib import Path
+from datetime import date
 
 TICKERS = ["AAPL", "TSLA", "MC.PA", "TTE.PA", "MSFT", "AMZN"]
 START = "2020-01-01"
-END   = "2024-12-31"
+END   = date.today().isoformat()
 
 def fetch_stock_prices():
     print("Telechargement des prix d'actions...")
