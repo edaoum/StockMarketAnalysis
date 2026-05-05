@@ -216,3 +216,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Données brutes (ne jamais committer)
+data/raw/
+!data/raw/.gitkeep
+
+# Variables d'environnement
+.env
+
+# Environnement Python
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Power BI (fichier local, pas versionnable)
+*.pbix
